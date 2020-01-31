@@ -1,0 +1,52 @@
+1. Define the following design principles: Singleton, Factory, Builder, Facade, Prototype?
+Singleton: A design pattern. A singular instance of an object in which it is never instanced, and only one can exist at a time.
+Factory: A design pattern that allow you to build a generic object and specify it later.
+Builder: A design pattern that allows for upfront manipulation. It is more difficult to change after the fact.
+Facade: An object that can be used to mask the complexities of underlying code structures.
+Prototype: A creation pattern that allows you to instance an object from existing code. It is not necessarily a complete object.
+
+2. What is the differences in ART and Dalvik?
+Dalvik uses a JIT (Just In Time) approach which dynamically compiles code. This makes the booting time faster and uses less space
+due to not needed to allocate ahead of time. This approach drains the battery and negatively affects the garbage collection.
+ART uses AOT (Ahead Of Time) approach which complies ahead of time in an installation phase. Booting time is slower, and it takes up
+more space. However, it reduces lag, improves battery life and have superior garbage collection.
+
+3. What is the android manifest used for?
+The manifest describes the app to Android's building tool. Specifically:
+The name of the app
+App components like activities, services, broadcast receivers, and content providers. It can also describe device config and basic class info.
+Any permissions needed (location, read/write, ect)
+Hardware/software requirements, allowing it to only run on compatible phone/versions
+
+4. Define the difference in Runtime and Compile Time.
+Compile time refers to a period of time when the code is preparing to output. Errors here are called compiler errors because they
+are caught by the compiler as issues that show up before the code can fully compile.
+Runtime refers to the period of time while the app is running. Errors here are generally due to params and such being set while its running
+and crashing the process due to an incorrect type/usage.
+
+5. How does each of the following units of measure for view work: sp, dp, px, pt, in, mm
+All of the units measure space differently.
+px = pixels, describing actual screen pixels.
+pt = points, 1/72 the size of an inch.
+mm = millimeters, refers to physical screen size.
+in = inches, refers to physical screen size
+dp = density independent pixels. These are abstracts units that are based directly on screen density. 1dp = 1px on a 160dpi screen.
+sp = scale independent pixels, dependent on user size choice. An element that uses this is fonts, and sp would be the font size.
+
+6. Describe what each section of the Android Platform arch. details.
+
+Linux Kernel - Foundation of the platform. ART has dependencies on this layer. It has security features, and the kernel is well
+known which makes development easier.
+HAL(Hardware Abstraction Layer) - This layer connects the API and hardware device capabilities. It connects to various hardwares like camera and bluetooth
+and provides the API ability to manipulate them.
+Android Runtime - ART. On current systems, apps run their own instance of ART. Compiles the code using a AOT approach.
+Native C/C++ Libraries - The layer that provides access to the C/C++ native code. HAL and ART both have dependencies here.
+Java API Framework - The layer of the android system including its full API and Java/Kotlin editability. Provides access to mutability with various managers.
+System Apps - Native android apps like mail, messages, calendars and contacts.
+
+7. What is reflection in JAVA?
+An API that can be used to get information about an object's class. Reflection can also provide the methods and constructors, and use them at runtime without a specifier.
+
+8.  How does gradle work behind the scene.
+Gradle is an automator that aims to simply and make building more efficient for developers.
+Behind the scenes, gradle is breaking down the app and initializing, configuring and executing what it needs to.
