@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ViewsAndViewsGroups</string>
+    <string name="zipcode_value">Zip Code</string>
+    <string name="state_value">State</string>
+    <string name="city_value">City</string>
+    <string name="address_value">Address</string>
+    <string name="last_name_value">Last Name</string>
+    <string name="first_name_value">First Name</string>
+    <string name="generate_value">Generate</string>
+</resources>
